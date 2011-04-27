@@ -49,6 +49,7 @@ public final class PrefixAdditionFilter extends SequenceFilesFromDirectoryFilter
       for (String aFit : new FileLineIterable(in, charset, false)) {
         file.append(aFit).append('\n');
       }
+      in.close();
       String name = current.getName().equals(fst.getPath().getName())
           ? current.getName()
           : current.getName() + Path.SEPARATOR + fst.getPath().getName();
